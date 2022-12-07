@@ -21,7 +21,7 @@ def magnitude(score):
         return "+"
     else:
         return "-"
-        
+        ""
 def compare(score, rival):
     if score > rival:
         print("You did better then your rival")
