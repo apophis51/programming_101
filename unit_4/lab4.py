@@ -1,51 +1,43 @@
 import random
 
 
+#Function to calculate the Winner
+def calculate_winner(computer_selection,user_selection):
 
-def winner(computer_selection,selection):
-
-        if computer_selection == selection:
-            return "its a TIE!"
-        if selection == "Rock" and computer_selection == "Paper":
+        if computer_selection == user_selection:
+            return "a TIE!"
+        elif user_selection == "Rock" and computer_selection == "Paper":
             return "computer"
-        if selection == "Rock" and computer_selection == "Scissors":
+        elif user_selection == "Rock" and computer_selection == "Scissors":
             return "human"
-        if selection == "Paper" and computer_selection == "Rock":
+        elif user_selection == "Paper" and computer_selection == "Rock":
             return "human"
-        if selection == "Paper" and computer_selection == "Scissors":
+        elif user_selection == "Paper" and computer_selection == "Scissors":
             return "computer"
-        if selection == "Scissors" and computer_selection == "Rock":
+        elif user_selection == "Scissors" and computer_selection == "Rock":
             return "computer"
-        if selection == "Scissors" and computer_selection == "Paper":
-            return "human"
+        elif user_selection == "Scissors" and computer_selection == "Paper":
+            return "human"      
 
-#1 hot encoding    Rock = 3 , Paper = 2 , Scissors = 1
-def computer_choice(computer_selection):
-    if computer_selection == 3:
-        return "Rock"
-    elif computer_selection == 2:
-         return "Paper"
-    elif computer_selection == 1:
-         return "Scissors"       
+choices = ["Rock","Paper","Scissors"]
 
-games = "four"
-for x in games:
-
-    print("Welcome to Rock, Paper, Scissors! \
+print("Welcome to Rock, Paper, Scissors! \
     \
-    \n\nYour options are:\
-    \
-    \n\n- Rock\
-    \n- Paper\
-    \n- Scissors\
-    \
-    \n\nEnter your selection:", end="") ; selection = input()
+    \n\nYour options are:\n")
+    
+for x in choices:
+    print(f"-{x}")
 
-    computer_selection = random.randint(1,3)
+user_selection = input( "\nEnter your selection:" )
 
-   
 
-    print(f"\n\nThe computer picked {computer_choice(computer_selection)} and you picked {selection}. The winner is: {winner(computer_choice(computer_selection),selection)}")
+
+#computer_selection = random.randint(1,3)
+computer_selection = random.choice(choices)
+
+
+#print the output   
+print(f"\n\nThe computer picked {computer_selection} and you picked {user_selection}. The winner is: {calculate_winner(computer_selection,user_selection)}")
      
 
     
